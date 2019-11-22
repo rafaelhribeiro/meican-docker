@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  meican:
+    build: .
+    container_name: meican-app
+    tty: true
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - db
+    links:
+      - db
+
+  db:
+    image: mysql:5.7
+    container_name: meican-db
+    volumes:
+      - /var/lib/mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=root
+      - MYSQL_DATABASE=meican
+      - MYSQL_USER=meican_user
+      - MYSQL_PASSWORD=Sts_VF7#
