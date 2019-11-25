@@ -2,7 +2,13 @@ version: '3'
 
 services:
   meican:
-    build: .
+    build:
+      context: .
+      args:
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
     container_name: meican-app
     tty: true
     restart: always
@@ -21,7 +27,7 @@ services:
       - /var/lib/mysql
     restart: always
     environment:
-      - MYSQL_ROOT_PASSWORD=root
-      - MYSQL_DATABASE=meican
-      - MYSQL_USER=meican_user
-      - MYSQL_PASSWORD=Sts_VF7#
+      - MYSQL_ROOT_PASSWORD
+      - MYSQL_DATABASE
+      - MYSQL_USER
+      - MYSQL_PASSWORD
