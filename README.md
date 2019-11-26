@@ -3,7 +3,7 @@
 ### Instructions to run:
 
 
-1- Enter the directory and open the file .env to configure your credentials;
+1. Enter the directory and open the file .env to configure your credentials;
 
    - You must configure the following items:
    
@@ -15,6 +15,7 @@
     
      * MYSQL_PASSWORD
         
-2- Run the following command:
+        
+2. Run the following command:
 
     docker-compose up
