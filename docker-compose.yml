@@ -2,6 +2,7 @@ version: '3'
 
 services:
   meican:
+    image: meican_image:$MEICAN_VERSION
     build:
       context: .
       args:
@@ -9,12 +10,12 @@ services:
       - MYSQL_DATABASE
       - MYSQL_USER
       - MYSQL_PASSWORD
+      - MEICAN_VERSION
     container_name: meican-app
     tty: true
     restart: always
     ports:
-      - "80:80"
-      - "443:443"
+      - "$MEICAN_PORT:80"
     depends_on:
       - db
     links:
@@ -24,10 +25,13 @@ services:
     image: mysql:5.7
     container_name: meican-db
     volumes:
-      - /var/lib/mysql
+      - db-meican:/var/lib/mysql
     restart: always
     environment:
       - MYSQL_ROOT_PASSWORD
       - MYSQL_DATABASE
       - MYSQL_USER
       - MYSQL_PASSWORD
+
+volumes:
+  db-meican:
