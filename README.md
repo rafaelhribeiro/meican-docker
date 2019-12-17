@@ -14,8 +14,15 @@
      * MYSQL_USER
     
      * MYSQL_PASSWORD
+     
+     * MEICAN_PORT
+     
+     * MEICAN_VERSION
         
         
 2- Run the following command:
 
     docker-compose up
+
+
+3- After, MEICAN will be available at localhost in port previously configured.
