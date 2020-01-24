@@ -38,7 +38,7 @@ RUN apt-get update \
 
 RUN adduser --disabled-password --gecos '' meican \
  && usermod -aG sudo meican \
- && su meican -c "curl -kL https://github.com/ufrgs-hyman/meican/archive/3.1.2.1.tar.gz | tar xzC /home/meican"
+ && su meican -c "curl -kL https://github.com/ufrgs-hyman/meican/archive/$MEICAN_VERSION.tar.gz | tar xzC /home/meican"
 
 COPY db.php $MEICAN_DIR/config/
 
