@@ -1,5 +1,10 @@
 ## MEICAN Docker
 
+### Requirements:
+* <a href="https://docs.docker.com/install">Docker</a>
+* <a href="https://docs.docker.com/compose/install">Docker Compose</a>
+
+
 ### Instructions to run:
 
 
